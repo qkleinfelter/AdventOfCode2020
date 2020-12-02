@@ -19,15 +19,11 @@ def part1(data):
     return valid
 
 def part2(data):
+    valid = 0
     for x in data:
-        print(x)
         numbers, char, password = x.split()
         pos1, pos2 = map(int, numbers.split('-'))
         char = char[0]
-        valid = 0
-        print(char)
-        print(password[pos1-1])
-        print(password[pos2-1])
         if ((password[pos1-1] == char) ^ (password[pos2-1] == char)):
             valid += 1
     return valid
