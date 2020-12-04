@@ -15,11 +15,10 @@ def part1(data, right, down):
     return trees
 
 def part2(data):
-    oneone = part1(data, 1, 1)
-    threeone = part1(data, 3, 1)
-    fiveone = part1(data, 5, 1)
-    sevenone = part1(data, 7, 1)
-    onetwo = part1(data, 1, 2)
-    return oneone*threeone*fiveone*sevenone*onetwo
+    slopes =[(1,1), (3,1), (5,1), (7,1), (1,2)]
+    total = 1
+    for slope in slopes:
+        total *= part1(data, slope[0], slope[1])
+    return total
 
 day3()
